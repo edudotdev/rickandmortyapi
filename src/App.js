@@ -8,12 +8,10 @@ function App() {
   const [id, setId] = useState(1)
   const [personaje, setPersonaje] = useState({});
 
-  
   useEffect(() => {
       fetch(`https://rickandmortyapi.com/api/character/${id}`)
       .then((respuesta) => respuesta.json())
       .then((datos) => setPersonaje(datos))
-
   }, [id])
 
   return (
