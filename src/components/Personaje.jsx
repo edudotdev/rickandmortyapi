@@ -14,9 +14,11 @@ const Personaje = ({personaje}) => {
                 <span>{status}</span>
                 <img 
                     src={image}
+                    alt="rick and morty api"
+                    title={name}
                 />
             </div>
-            <span className="backgroundName">{name}</span>
+            <span className="backgroundName" >{name}</span>
         </div>
 
      );

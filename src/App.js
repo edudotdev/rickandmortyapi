@@ -10,7 +10,6 @@ function App() {
 
   
   useEffect(() => {
-
       fetch(`https://rickandmortyapi.com/api/character/${id}`)
       .then((respuesta) => respuesta.json())
       .then((datos) => setPersonaje(datos))

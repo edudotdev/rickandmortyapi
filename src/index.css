@@ -98,3 +98,25 @@ input[type="button"] {
   left: 0;
   top: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .btnLess {
+    left: 0;
+    bottom: 0;
+    top: unset;
+  }
+  .btnMore, .btnLess {
+    padding: 25px;
+    font-size: 30px;
+  }
+  .card { 
+    width: 350px;
+    height: 420px; 
+  }
+  .card span {  
+    padding: 12px; 
+    font-size: 30px;
+    margin: 5px 15px 0 15px; 
+    font-weight: 600;
+  }
+}

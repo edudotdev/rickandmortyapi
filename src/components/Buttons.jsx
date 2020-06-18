@@ -2,12 +2,18 @@ import React, {Fragment} from 'react';
 
 const Buttons = ({id, setId}) => {
 
+    const top = 591;
+
     const handleClick = e => {
         if(e.target.name === 'more'){
-            setId(id+1)
+            if(id === top){
+                setId(1)
+            }else {
+                setId(id+1)
+            }
         }else if(e.target.name === 'less') {
             if(id === 1) {
-                setId(591)
+                setId(top)
             }else {
                 setId(id-1)
             }
