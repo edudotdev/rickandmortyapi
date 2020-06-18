@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment, useEffect, useState} from 'react';
+import Header from './components/Header'
+import Personaje from './components/Personaje'
+
 
 function App() {
+
+  const [id, setId] = useState(1)
+  const [personaje, setPersonaje] = useState({});
+  
+  console.log('odio useEfect');
+  
+  useEffect(() => {
+
+      fetch(`https://rickandmortyapi.com/api/character/${id}`)
+      .then((respuesta) => respuesta.json())
+      .then((datos) => setPersonaje(datos))
+
+  }, [id])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+        <Header />
+
+        <Personaje 
+          personaje={personaje}
+        />
+        <input 
+          type="button"
+          value="consultar" 
+          onClick={() => setId(id+1)}
+        />
+        {console.log(personaje)}
+    </Fragment>
   );
 }
 
