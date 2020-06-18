@@ -1,14 +1,13 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import Header from './components/Header'
 import Personaje from './components/Personaje'
-
+import Buttons from './components/Buttons'
 
 function App() {
 
   const [id, setId] = useState(1)
   const [personaje, setPersonaje] = useState({});
-  
-  console.log('odio useEfect');
+
   
   useEffect(() => {
 
@@ -21,16 +20,14 @@ function App() {
   return (
     <Fragment>
         <Header />
-
         <Personaje 
           personaje={personaje}
+          id={id}
         />
-        <input 
-          type="button"
-          value="consultar" 
-          onClick={() => setId(id+1)}
+        <Buttons 
+          setId={setId}
+          id={id}
         />
-        {console.log(personaje)}
     </Fragment>
   );
 }

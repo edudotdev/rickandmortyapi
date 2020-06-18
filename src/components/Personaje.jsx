@@ -2,12 +2,13 @@ import React from 'react'
 
 const Personaje = ({personaje}) => {
 
-    const {name, species, status, image} = personaje
+    const {id, name, species, status, image} = personaje
 
     return ( 
 
         <div className="container">
             <div className="card">
+                <span className="id">{id}</span>
                 <span>{name}</span>
                 <span>{species}</span>
                 <span>{status}</span>
@@ -15,6 +16,7 @@ const Personaje = ({personaje}) => {
                     src={image}
                 />
             </div>
+            <span className="backgroundName">{name}</span>
         </div>
 
      );
